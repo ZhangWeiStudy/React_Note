@@ -46,8 +46,6 @@
 
 	'use strict';
 
-	// require('./src/htmlAndJs.js');
-	// require('./src/propsAndEllipsis.js');
 	__webpack_require__(1);
 
 /***/ },
@@ -74,54 +72,43 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var NodeList = function (_Component) {
-	    _inherits(NodeList, _Component);
+	var Search = function (_Component) {
+	    _inherits(Search, _Component);
 
-	    function NodeList() {
-	        _classCallCheck(this, NodeList);
+	    function Search() {
+	        _classCallCheck(this, Search);
 
-	        return _possibleConstructorReturn(this, (NodeList.__proto__ || Object.getPrototypeOf(NodeList)).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).apply(this, arguments));
 	    }
 
-	    _createClass(NodeList, [{
+	    _createClass(Search, [{
+	        key: 'getInputText',
+	        value: function getInputText() {
+
+	            var inputValue = this.refs.inputString.value;
+	            alert(inputValue);
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement(
-	                'ul',
-	                null,
 
-	                //遍历this.props.children节点
-	                _react2.default.Children.map(this.props.children, function (child) {
-	                    return _react2.default.createElement(
-	                        'li',
-	                        null,
-	                        child
-	                    );
-	                })
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement('input', { type: 'text', ref: 'inputString' }),
+	                _react2.default.createElement(
+	                    'button',
+	                    { type: 'button', onClick: this.getInputText.bind(this) },
+	                    '\u83B7\u53D6input\u4E2D\u7684\u503C'
+	                )
 	            );
 	        }
 	    }]);
 
-	    return NodeList;
+	    return Search;
 	}(_react.Component);
 
-	_reactDom2.default.render(_react2.default.createElement(
-	    NodeList,
-	    null,
-	    _react2.default.createElement(
-	        'span',
-	        null,
-	        'hello'
-	    ),
-	    _react2.default.createElement(
-	        'span',
-	        null,
-	        'world'
-	    )
-	), document.getElementById('app'));
-
-	// 传入了一组dom节点，在this.props.children这个属性中可获取到，
-	// 然后用React.Children.map方法遍历即可。
+	_reactDom2.default.render(_react2.default.createElement(Search, null), document.getElementById("app"));
 
 /***/ },
 /* 2 */
