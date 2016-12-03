@@ -1,1 +1,0 @@
-require('./src/getContent.js');
